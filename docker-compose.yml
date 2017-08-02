@@ -30,7 +30,8 @@ php:
 mysql:
   build: ./mysql
   ports:
-    - "3306:3306"
+#    - "3306:3306"
+    - "3306"
   volumes:
     - ~/www-root/data/mysql:/var/lib/mysql
   environment:
@@ -39,4 +40,5 @@ mysql:
 redis:
   build: ./redis
   ports:
-    - "6379:6379"
+#    - "6379:6379"
+    - "6379"
