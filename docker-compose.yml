@@ -8,7 +8,7 @@ nginx:
   volumes:
     - ~/www-root:/www-root
     # nginx root 目录
-    - ~/www-root:/www-root
+    - ~/www-root/html:/www-root/htdocs
     # nginx 日志
     - ~/www-root/log/nginx:/www-root/log/nginx
     # php-fpm 日志
