@@ -1,0 +1,42 @@
+nginx:
+  build: ./nginx
+  ports:
+#    - "80:80"
+    - "80"
+  links:
+    - "php"
+  volumes:
+    - ~/www-root:/www-root
+    # nginx root 目录
+    - ~/www-root:/www-root
+    # nginx 日志
+    - ~/www-root/log/nginx:/www-root/log/nginx
+    # php-fpm 日志
+    - ~/www-root/log/php:/www-root/log/php
+
+php:
+  build: ./php
+  ports:
+#    - "8000:8000"
+#    - "9000:9000"
+    - "8000"
+    - "9000"
+  links:
+    - "mysql"
+    - "redis"
+  volumes:
+    - ~/www-root:/www-root
+
+mysql:
+  build: ./mysql
+  ports:
+    - "3306:3306"
+  volumes:
+    - ~/www-root/data/mysql:/var/lib/mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: 123456
+
+redis:
+  build: ./redis
+  ports:
+    - "6379:6379"
