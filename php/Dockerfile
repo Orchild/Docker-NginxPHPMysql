@@ -19,7 +19,7 @@ RUN set -xe \
 
 # Install env
 ADD sources.list /etc/apt/sources.list
-RUN apt-get update && apt-get install -y ${buildDeps} --no-install-recommends \
+RUN apt-get update && apt-get install -y ${buildDeps} --no-install-recommends
 	
 # Install PHP extensions
 COPY extensions/redis.tgz /home/redis.tgz
