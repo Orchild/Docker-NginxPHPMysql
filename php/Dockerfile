@@ -23,7 +23,7 @@ RUN apt-get update \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libpng12-dev \
-    && docker-php-ext-install zip
+    && docker-php-ext-install zip \
     && docker-php-ext-install mbstring \
     && docker-php-ext-install mcrypt \
     && docker-php-ext-install mysql \
