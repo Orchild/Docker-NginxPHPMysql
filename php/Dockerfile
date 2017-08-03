@@ -4,6 +4,7 @@ FROM php:5.6-fpm
 ADD sources.list /etc/apt/sources.list
 RUN apt-get update && apt-get install -y \
 	git \
+	zlib1g-dev \
     libmcrypt-dev \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
