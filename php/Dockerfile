@@ -15,7 +15,7 @@ COPY extensions/redis.tgz /home/redis.tgz
 COPY extensions/xdebug.tgz /home/xdebug.tgz
 COPY extensions/xhprof.tgz /home/xhprof.tgz
 
-RUN apt-get update
+RUN apt-get update \
     && apt-get install -y \
         git \
         zlib1g-dev \
